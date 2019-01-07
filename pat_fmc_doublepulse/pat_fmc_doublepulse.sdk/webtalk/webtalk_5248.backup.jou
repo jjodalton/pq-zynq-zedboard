@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 17:18:21 MST 2014
+# 
+# Start of session at: Wed Feb 11 18:52:18 2015
+# Process ID: 5512
+# Log file: C:/Xilinx/Projects/pat_testharness-pwm/pat_testharness-pwm.sdk/webtalk/webtalk.log
+# Journal file: C:/Xilinx/Projects/pat_testharness-pwm/pat_testharness-pwm.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

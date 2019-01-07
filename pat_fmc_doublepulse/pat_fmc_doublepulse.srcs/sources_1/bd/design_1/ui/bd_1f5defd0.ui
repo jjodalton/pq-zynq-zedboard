@@ -1,0 +1,111 @@
+{
+   commentid: "",
+   guistr: "# # String gsaved with Nlview 6.4.10  2014-10-02 bk=1.3207 VDI=35 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port pwm_clk -pg 1 -y 500 -defaultsOSRD
+preplace port DDR -pg 1 -y 780 -defaultsOSRD
+preplace port clkReturn_P -pg 1 -y 180 -defaultsOSRD
+preplace port gpio_rtl -pg 1 -y 1310 -defaultsOSRD
+preplace port gpio_dac -pg 1 -y 1430 -defaultsOSRD
+preplace port gpio_modes -pg 1 -y 1190 -defaultsOSRD
+preplace port sys_clock -pg 1 -y 570 -defaultsOSRD
+preplace port iic_axi -pg 1 -y 480 -defaultsOSRD
+preplace port clk_pat_locked -pg 1 -y 370 -defaultsOSRD
+preplace port clk_pat -pg 1 -y 290 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 800 -defaultsOSRD
+preplace port gpio_pwm_1 -pg 1 -y 440 -defaultsOSRD
+preplace port gpio_pwm_2 -pg 1 -y 460 -defaultsOSRD
+preplace port clkReturn_N -pg 1 -y 200 -defaultsOSRD
+preplace portBus apins_N -pg 1 -y 840 -defaultsOSRD
+preplace portBus bpins -pg 1 -y 1030 -defaultsOSRD
+preplace portBus apins_P -pg 1 -y 820 -defaultsOSRD
+preplace portBus pwm_low -pg 1 -y 1590 -defaultsOSRD
+preplace portBus bin_N -pg 1 -y 820 -defaultsOSRD
+preplace portBus pwm_high -pg 1 -y 1500 -defaultsOSRD
+preplace portBus pwm_high_N -pg 1 -y 1470 -defaultsOSRD
+preplace portBus bin_P -pg 1 -y 800 -defaultsOSRD
+preplace portBus pwm_low_N -pg 1 -y 1600 -defaultsOSRD
+preplace portBus pwm_high_P -pg 1 -y 1450 -defaultsOSRD
+preplace portBus pwm_low_P -pg 1 -y 1580 -defaultsOSRD
+preplace inst axi_iic_0 -pg 1 -lvl 4 -y 690 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 5 -y 930 -defaultsOSRD
+preplace inst axi_gpio_dac -pg 1 -lvl 4 -y 1450 -defaultsOSRD
+preplace inst util_ds_buf_pwm_low -pg 1 -lvl 5 -y 1590 -defaultsOSRD
+preplace inst util_ds_buf_pwm_high -pg 1 -lvl 5 -y 1490 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 5 -y 1030 -defaultsOSRD
+preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 1110 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 4 -y 210 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 4 -y 430 -defaultsOSRD
+preplace inst axi_gpio_modes -pg 1 -lvl 4 -y 1200 -defaultsOSRD
+preplace inst xlslice_4 -pg 1 -lvl 5 -y 820 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 4 -y 1330 -defaultsOSRD
+preplace inst xlslice_5 -pg 1 -lvl 5 -y 420 -defaultsOSRD
+preplace inst clock_measure_0 -pg 1 -lvl 6 -y 580 -defaultsOSRD
+preplace inst clk_pat -pg 1 -lvl 4 -y 540 -defaultsOSRD
+preplace inst util_ds_buf_apins -pg 1 -lvl 6 -y 930 -defaultsOSRD
+preplace inst clock_select_0 -pg 1 -lvl 5 -y 70 -defaultsOSRD
+preplace inst util_ds_buf_clkReturn -pg 1 -lvl 1 -y 190 -defaultsOSRD
+preplace inst axi_gpio_abpins -pg 1 -lvl 4 -y 860 -defaultsOSRD
+preplace inst util_ds_buf_bin -pg 1 -lvl 1 -y 810 -defaultsOSRD
+preplace inst axi_gpio_pwm -pg 1 -lvl 4 -y 310 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 3 -y 1080 -defaultsOSRD
+preplace inst axi_gpio_clock -pg 1 -lvl 4 -y 1040 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -y 850 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 2 8 N 780 NJ 760 NJ 870 NJ 780 NJ 780 NJ 780 NJ 780 NJ
+preplace netloc clk_pat_locked1 1 4 6 1700 370 NJ 470 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc clkReturn_P_1 1 0 1 N
+preplace netloc xlslice_4_Dout 1 5 1 1980
+preplace netloc pwm_high_1 1 0 5 NJ 1500 NJ 1500 NJ 1500 NJ 1520 1700
+preplace netloc xlslice_3_Dout 1 4 1 1720
+preplace netloc xlslice_1_Dout 1 5 5 NJ 1030 NJ 1030 NJ 1030 NJ 1030 N
+preplace netloc processing_system7_0_axi_periph_M03_AXI 1 3 1 1290
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 3 1 1310
+preplace netloc util_ds_buf_0_OBUF_DS_N 1 6 4 2310 840 NJ 840 NJ 840 NJ
+preplace netloc processing_system7_0_axi_periph_M07_AXI 1 3 1 1350
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 960
+preplace netloc xlslice_5_Dout 1 5 1 1990
+preplace netloc pwm_low_1 1 0 5 NJ 1590 NJ 1590 NJ 1590 NJ 1590 N
+preplace netloc util_ds_buf_pwm_high_OBUF_DS_N 1 5 5 2010 1470 NJ 1470 NJ 1470 NJ 1470 NJ
+preplace netloc processing_system7_0_axi_periph_M05_AXI 1 3 1 1270
+preplace netloc util_ds_buf_0_OBUF_DS_P 1 6 4 2300 820 NJ 820 NJ 820 NJ
+preplace netloc clock_select_0_clock_out 1 5 5 NJ 70 NJ 70 NJ 70 NJ 70 2450
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 150 1010 NJ 710 910
+preplace netloc util_ds_buf_clkReturn_IBUF_OUT 1 1 5 480 620 NJ 620 NJ 620 NJ 570 NJ
+preplace netloc util_ds_buf_pwm_high_OBUF_DS_P 1 5 5 1990 1450 NJ 1450 NJ 1450 NJ 1450 NJ
+preplace netloc sys_clock_1 1 0 4 NJ 570 NJ 570 NJ 570 N
+preplace netloc axi_gpio_modes_GPIO 1 4 6 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 N
+preplace netloc processing_system7_0_axi_periph_M02_AXI 1 3 1 1300
+preplace netloc clkReturn_N_1 1 0 1 N
+preplace netloc util_ds_buf_bin_IBUF_OUT 1 1 4 490 990 NJ 810 NJ 950 1680
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 3 NJ 700 930 1350 1340
+preplace netloc processing_system7_0_axi_periph_M06_AXI 1 3 1 1370
+preplace netloc IBUF_DS_N_1 1 0 1 N
+preplace netloc axi_gpio_pwm_GPIO2 1 4 6 N 320 NJ 460 NJ 460 NJ 460 NJ 460 NJ
+preplace netloc axi_gpio_pwm_GPIO 1 4 6 1730 310 NJ 440 NJ 440 NJ 440 NJ 440 NJ
+preplace netloc axi_gpio_dac_GPIO 1 4 6 NJ 1430 NJ 1430 NJ 1430 NJ 1430 NJ 1430 N
+preplace netloc processing_system7_0_FIXED_IO 1 2 8 N 800 NJ 770 NJ 880 NJ 800 NJ 800 NJ 800 NJ 800 NJ
+preplace netloc xlslice_2_Dout 1 4 1 1690
+preplace netloc IBUF_DS_P_1 1 0 1 N
+preplace netloc axi_iic_0_IIC 1 4 6 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 2450
+preplace netloc axi_gpio_0_GPIO 1 4 6 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ 1330 2450
+preplace netloc clock_measure_0_measurement 1 4 3 NJ 980 NJ 990 2290
+preplace netloc util_ds_buf_pwm_low_OBUF_DS_N 1 5 5 N 1600 NJ 1600 NJ 1600 NJ 1600 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 160 1020 480 680 950 1340 1330
+preplace netloc axi_gpio_abpins_ip2intc_irpt 1 1 4 530 1000 NJ 820 NJ 960 1670
+preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 2 NJ 690 970
+preplace netloc axi_gpio_clock_gpio_io_o 1 3 2 1350 380 1690
+preplace netloc clk_pat_clk_out1 1 4 1 1710
+preplace netloc util_ds_buf_pwm_low_OBUF_DS_P 1 5 5 N 1580 NJ 1580 NJ 1580 NJ 1580 NJ
+preplace netloc processing_system7_0_axi_periph_M04_AXI 1 3 1 1280
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 3 1 1320
+preplace netloc xlslice_0_Dout 1 5 1 N
+preplace netloc clk_pat_clk_out2 1 4 6 NJ 540 2010 500 NJ 500 NJ 500 NJ 500 NJ
+preplace netloc axi_gpio_abpins_gpio_io_o 1 4 1 1710
+levelinfo -pg 1 130 320 720 1120 1540 1860 2160 2330 2380 2430 2470
+",
+}
+{
+   da_axi4_cnt: "13",
+   da_board_cnt: "14",
+   da_ps7_cnt: "1",
+}

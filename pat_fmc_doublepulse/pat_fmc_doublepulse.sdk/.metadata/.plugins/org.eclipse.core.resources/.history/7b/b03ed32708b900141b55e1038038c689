@@ -1,0 +1,83 @@
+/*
+ * pat_tests.h
+ *
+ *  Created on: 4 Dec 2014
+ *      Author: cssjh
+ */
+
+#ifndef PAT_TESTS_H_
+#define PAT_TESTS_H_
+
+enum {MODE_RESET, MODE_DEBUG, MODE_RUN, MODE_MEMLOAD} ;
+enum {CLK_INT, CLK_EXT} ;
+enum {CLK_EXT_PLL, CLK_EXT_MANUAL} ;
+enum {PWM_LOW, PWM_HIGH} ;
+enum {F5V_INT, F5V_EXT} ;
+enum {VREF_INT, VREF_EXT} ;
+
+// A single tweak
+typedef struct tweak{ unsigned enable :1 ; unsigned delay : 3 ; unsigned duration : 2 ; unsigned sense : 1 ; } tweak ;
+
+// A full pattern of main drivers and tweaks
+typedef struct pattern{
+char p_drive; char p_tweak_delay; tweak p_tweak_0; tweak p_tweak_1 ;
+tweak p_tweak_2 ; tweak p_tweak_3 ; tweak p_tweak_4 ; tweak p_tweak_5 ;
+char n_drive ; char n_tweak_delay ; tweak n_tweak_0 ; tweak n_tweak_1 ;
+tweak n_tweak_2 ; tweak n_tweak_3 ; tweak n_tweak_4 ; tweak n_tweak_5 ;
+} pattern ;
+
+// A PAT instruction. Laid out in memory as it should be
+typedef struct instruction{unsigned immediate : 8 ; unsigned opcode : 4 ; unsigned dest : 1 ; unsigned cond : 2 ;
+unsigned fieldp : 5 ; unsigned rd : 3 ; } instruction ;
+
+// some instruction field constants
+enum {I_DEST_REG, I_DEST_PATTERN} ;
+enum {I_COND_AL, I_COND_Z, ICOND_N, I_COND_ERR} ;
+
+/* Layout is
+ * Address : [57:48]
+ * Instruction2 : [46:24]
+ * Instruction1 : [22:0]
+ */
+// TODO: Check layout order
+typedef struct iLoad{unsigned address : 10 ; unsigned pad1 : 1 ; instruction i2 ; unsigned pad2 : 1 ; instruction i1 ; } iLoad ;
+
+#define BIT_TWEAKS_ENABLE 0
+#define BIT_TWEAKS_DELAY_START 1
+#define BIT_TWEAKS_DELAY_END 3
+#define BIT_TWEAKS_DURATION_START 4
+#define BIT_TWEAKS_DURATION_END 5
+#define BIT_TWEAKS_SENSE 6
+
+unsigned calcPeriod(unsigned input_period, unsigned desired_period) ;
+void timerWait(XScuTimer* SCUTimer, unsigned period) ;
+
+void setExtClockSource(unsigned isManualClk) ;
+void manualClockPulse(XScuTimer* SCUTimer) ;
+void sclkOutByte(XScuTimer* SCUTimer, char byte, char ssel, char saddr, char s_low_high) ;
+void setDAC(XScuTimer* SCUTimer, unsigned value) ;
+void setModes(unsigned mode, unsigned f5v_sel, unsigned vref_sel, unsigned clk_sel) ;
+
+unsigned measureClkReturn(XScuTimer* SCUTimer) ;
+
+void loadMemory(XScuTimer* SCUTimer, unsigned startAddress, unsigned length, instruction instrs[]) ;
+void readScanChain(XScuTimer* SCUTimer, char scanChain[430]) ;
+
+char readAs() ;
+char readBs() ;
+
+void setAs(char bits) ;
+void setBs(char bits) ;
+
+
+char tweakToByte(tweak t) ;
+void loadPattern(pattern p, XScuTimer* SCUTimer, char thePWM, char address) ;
+void setPatternOverride(char s_low_high, char saddr) ;
+void loadDrivesOnly(XScuTimer* SCUTimer, char p_drive, char n_drive, char thePWM, char address) ;
+
+void runTestClock(XScuTimer* SCUTimer, unsigned isExtClock) ;
+void runTestRingOscillator() ;
+void runTestDrive(XScuTimer* SCUTimer) ;
+
+
+#endif /* PAT_TESTS_H_ */

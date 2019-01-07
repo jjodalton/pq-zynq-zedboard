@@ -1,0 +1,527 @@
+***************************************************************************************
+*                      PROJECT ARCHIVE SUMMARY REPORT
+*
+*                      (archive_project_summary.txt)
+*
+*  PLEASE READ THIS REPORT TO GET THE DETAILED INFORMATION ABOUT THE PROJECT DATA THAT
+*  WAS ARCHIVED FOR THE CURRENT PROJECT
+*
+* The report is divided into following four sections:-
+*
+* Section (1) - PROJECT INFORMATION
+*  This section provides the details of the current project that was archived
+*
+* Section (2) - INCLUDED/EXCLUDED RUNS
+*  This section summarizes the list of design runs for which the results were included
+*  or excluded from the archive
+*
+* Section (3) - ARCHIVED SOURCES
+*  This section summarizes the list of files that were added to the archive
+*
+* Section (3.1) - INCLUDE FILES
+*  This section summarizes the list of 'include' files that were added to the archive
+*
+* Section (3.1.1) - INCLUDE_DIRS SETTINGS
+*  This section summarizes the 'verilog include directory' path settings, if any
+*
+* Section (3.2) - REMOTE SOURCES
+*  This section summarizes the list of referenced 'remote' files that were 'imported'
+*  into the archived project
+*
+* Section (3.3) - SOURCES SUMMARY
+*  This section summarizes the list of all the files present in the archive
+*
+* Section (3.4) - REMOTE IP DEFINITIONS
+*  This section summarizes the list of all the remote IP's present in the archive
+*
+* Section (4) - JOURNAL/LOG FILES
+*  This section summarizes the list of journal/log files that were added to the archive
+*
+* Section (5) - CONFIGURATION SETTINGS/FILES
+*  This section summarizes the configuration settings/files that were added to the archive
+*
+***************************************************************************************
+
+Section (1) - PROJECT INFORMATION
+---------------------------------
+Name      = pat_testharness-testsocket
+Directory = C:/Xilinx/Projects/pat_testharness-testsocket
+
+Section (2) - Excluded Runs
+---------------------------
+The run results were excluded for the following runs in the archived project:-
+
+<synth_1>
+<impl_1>
+
+Section (3) - ARCHIVED SOURCES
+------------------------------
+The following sub-sections describes the list of sources that were archived for the current project:-
+
+Section (3.1) - INCLUDE FILES
+-----------------------------
+List of referenced 'RTL Include' files that were 'imported' into the archived project:-
+
+None
+
+Section (3.1.1) - INCLUDE_DIRS SETTINGS
+---------------------------------------
+List of the "INCLUDE_DIRS" fileset property settings that may or may not be applicable in the archived
+project, since most the 'RTL Include' files referenced in the original project were 'imported' into the
+archived project.
+
+<sources_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+<sim_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+Section (3.2) - REMOTE SOURCES
+------------------------------
+List of referenced 'remote' design files that were 'imported' into the archived project:-
+
+<sources_1>
+C:/Xilinx/Projects/git-pat_testharness/src/design_1/hdl/pwm_generator.v
+C:/Xilinx/Projects/git-pat_testharness/src/design_1/design_1.bd
+C:/Xilinx/Projects/component.xml
+
+<constrs_1>
+C:/Xilinx/Projects/git-pat_testharness/constraints/pat_testharness-constraints-testsocket.xdc
+
+<sim_1>
+None
+
+Section (3.3) - SOURCES SUMMARY
+-------------------------------
+List of all the source files present in the archived project:-
+
+<sources_1>
+./pat_testharness-testsocket.srcs/sources_1/imports/Projects/git-pat_testharness/src/design_1/hdl/pwm_generator.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/design_1.bd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/doc/processing_system7_v5_5_changelog.txt
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/board/xc7z020.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/board/xc7z706.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/board/ZedBoard.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/can/can0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/can/can0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/can/can1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/can/can1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/clkgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/codegen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ddrgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ddrgen.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/miogen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/peripheralsgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/peripheralsgen.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/pllgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ucfgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ucfgen.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/sdkgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ps7_init.c
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ps7_init.h
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ps7_init.tcl
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ps7_post_config.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/ps7_debug.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/code/powergen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ddr/ddr_iostandards.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ddr/ddr_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ddr/ddr_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ddr/ddr_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ddr/ddr_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet0_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet0_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet1_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/enet/enet1_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/global/global_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/global/global_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/global/global_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/global/global_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/global/clkdata.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/gpio/gpio_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/gpio/gpio_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/gpio/gpio_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c0_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c0_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c1_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/i2c/i2c1_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/mio/mio_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/mio/mio_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/mpd/hw_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nand/nand_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nand/nand_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nand/nand_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nand/nand_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nor/nor_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nor/nor_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/nor/nor_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/part/package_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/part/package_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/part/partno_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/part/partno_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/pjtag/pjtag_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/pjtag/pjtag_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ps7regs/sw_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ps7regs/sw_regs.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/qspi/qspi_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/qspi/qspi_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sd0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sd0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sd1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sd1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sdio_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/sd/sdio_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/spi/spi0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/spi/spi0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/spi/spi1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/spi/spi1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/trace/trace_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/trace/trace_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ttc/ttc0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ttc/ttc0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ttc/ttc1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ttc/ttc1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart_hw_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart_io_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/uart/uart_ui_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ui/param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ui/preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ui/ui_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/ui/ui_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb0_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb0_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb0_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb0_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb1_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb1_param.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb1_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/usb/usb1_preset.xml.orig
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/vivado_dataxml.pl
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/xpsmaps.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/wdt/wdt_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/wdt/wdt_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/guidata.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/MIOData.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/zynq.svg
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/mio.svg
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_ar.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_clr.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_rc.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_rea.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_rr.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_wc.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nand_t_wp.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_ceoe.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_pc.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_rc.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_tr.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_wc.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_t_wp.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/nor_we_time.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/guidata/zynq_100x30.png
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/clkgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/ddrgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/miogen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/peripheralsgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/pllgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/powergen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/ps7regs/sw_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/ps7regs/sw_regs.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/ps7_post_config.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/1.0/code/ps7_debug.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/clkgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/ddrgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/miogen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/peripheralsgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/pllgen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/powergen.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/ps7regs/sw_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/ps7regs/sw_regs.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/ps7_post_config.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/2.0/code/ps7_debug.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/cti/cti_param.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/cti/cti_preset.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/html/javascripts
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/data/zynqconfig/html/ps_summary.css
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/component.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/fixedio.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/fixedio_rtl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/jtag.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/jtag_rtl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hpstatusctrl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hpstatusctrl_rtl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/usbctrl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/usbctrl_rtl.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_local_params.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_wr.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_rd.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_wr_4.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_rd_4.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_hp2_3.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_arb_hp0_1.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_ssw_hp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_sparse_mem.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_reg_params.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_reg_init.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_reg_map.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_ocm_mem.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_intr_wr_mem.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_intr_rd_mem.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_fmsw_gp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_regc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_ocmc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_interconnect_model.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_gen_reset.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_gen_clock.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_ddrc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_axi_slave.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_axi_master.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_afi_slave.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_apis.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_unused_ports.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_axi_gp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_axi_acp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_axi_hp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/processing_system7_bfm_v2_0_processing_system7_bfm.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init.c
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init.h
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init_gpl.c
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init_gpl.h
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init.tcl
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/ps7_init.html
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_aw_atc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_b_atc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_w_atc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_atc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_trace_buffer.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/doc/axi_gpio_v2_0_changelog.txt
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/ipif_pkg.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/pselect_f.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/address_decoder.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/slave_attachment.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/axi_lite_ipif.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/interrupt_control_v3_1/hdl/src/vhdl/interrupt_control.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_gpio_v2_0/hdl/src/vhdl/gpio_core.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/axi_gpio_v2_0/hdl/src/vhdl/axi_gpio.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/synth/design_1_axi_gpio_0_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/doc/proc_sys_reset_v5_0_changelog.txt
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0/hdl/src/vhdl/upcnt_n.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0/hdl/src/vhdl/sequence.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0/hdl/src/vhdl/lpf.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0/hdl/src/vhdl/proc_sys_reset.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/sim/design_1_rst_processing_system7_0_100M_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_ooc.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/synth/design_1_rst_processing_system7_0_100M_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/hdl/design_1.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/doc/axi_crossbar_v2_1_changelog.txt
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_and.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_latch_and.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_latch_or.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_or.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_command_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_mask_static.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_mask.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_sel_mask_static.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_sel_mask.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_sel_static.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_sel.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_comparator.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_mux_enc.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_mux.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_nto1_mux.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_header.vh
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_axic_srl_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_infrastructure_v1_1/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_register_slice_v2_1/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vh_rfs.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_axic_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_fifo_gen.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_axic_reg_srl_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_ndeep_srl.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_data_fifo_v2_1/hdl/verilog/axi_data_fifo_v2_1_axi_data_fifo.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_arbiter_sasd.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_arbiter.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_addr_decoder.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_arbiter_resp.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_crossbar_sasd.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_crossbar.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_si_transactor.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_splitter.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_wdata_router.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/axi_crossbar_v2_1/hdl/verilog/axi_crossbar_v2_1_axi_crossbar.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/fifo_generator_v12_0/hdl/fifo_generator_v12_0_vhsyn_rfs.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/design_1_clock_select_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/design_1_clock_select_0_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/src/clock_select.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/sim/design_1_clock_select_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/synth/design_1_clock_select_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_select_0_0/design_1_clock_select_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/design_1_xlslice_2_1.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/design_1_xlslice_2_1.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/work/xlslice.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/sim/design_1_xlslice_2_1.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/synth/design_1_xlslice_2_1.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_2_1/design_1_xlslice_2_1.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/design_1_clock_measure_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/design_1_clock_measure_0_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/src/clock_measure.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/sim/design_1_clock_measure_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/synth/design_1_clock_measure_0_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clock_measure_0_0/design_1_clock_measure_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/design_1_xlslice_4_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/design_1_xlslice_4_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/work/xlslice.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/sim/design_1_xlslice_4_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/synth/design_1_xlslice_4_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_4_0/design_1_xlslice_4_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/design_1_xlslice_5_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/design_1_xlslice_5_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/work/xlslice.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/sim/design_1_xlslice_5_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/synth/design_1_xlslice_5_0.v
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_5_0/design_1_xlslice_5_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/doc/axi_iic_v2_0_changelog.txt
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0_board.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0.veo
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/lib_pkg_v1_0/hdl/src/vhdl/lib_pkg.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/ipif_pkg.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/pselect_f.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/address_decoder.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/slave_attachment.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_lite_ipif_v3_0/hdl/src/vhdl/axi_lite_ipif.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/interrupt_control_v3_1/hdl/src/vhdl/interrupt_control.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/soft_reset.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/srl_fifo.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/upcnt_n.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/shift8.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/iic_pkg.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/debounce.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/reg_interface.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/iic_control.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/filter.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/dynamic_master.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/axi_ipif_ssp1.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/iic.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/axi_iic_v2_0/hdl/src/vhdl/axi_iic.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/sim/design_1_axi_iic_0_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0_ooc.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/synth/design_1_axi_iic_0_0.vhd
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/design_1_ooc.xdc
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0_2/design_1_xlslice_0_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0_2/design_1_xlslice_0_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_1_0_2/design_1_xlslice_1_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_1_0_2/design_1_xlslice_1_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_bin_0_4/design_1_util_ds_buf_bin_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_bin_0_4/design_1_util_ds_buf_bin_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_pwm_high_0_2/design_1_util_ds_buf_pwm_high_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_pwm_high_0_2/design_1_util_ds_buf_pwm_high_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_pwm_low_0_2/design_1_util_ds_buf_pwm_low_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_pwm_low_0_2/design_1_util_ds_buf_pwm_low_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_clkReturn_0_2/design_1_util_ds_buf_clkReturn_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_clkReturn_0_2/design_1_util_ds_buf_clkReturn_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_3_0_1/design_1_xlslice_3_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_xlslice_3_0_1/design_1_xlslice_3_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_apins_0_4/design_1_util_ds_buf_apins_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_util_ds_buf_apins_0_4/design_1_util_ds_buf_apins_0.xml
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+./pat_testharness-testsocket.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xml
+./pat_testharness-testsocket.srcs/sources_1/imports/hdl/design_1_wrapper.v
+./pat_testharness-testsocket.srcs/sources_1/imports/Projects/component.xml
+
+<constrs_1>
+./pat_testharness-testsocket.srcs/constrs_1/imports/constraints/pat_testharness-constraints-testsocket.xdc
+
+<sim_1>
+None
+
+Section (3.4) - REMOTE IP DEFINITIONS
+-------------------------------------
+List of all the remote IP's present in the archived project:-
+
+<sources_1>
+./pat_testharness-testsocket.ipdefs/ip_clock_selector/
+./pat_testharness-testsocket.ipdefs/ip_clock_measure/
+
+Section (4) - JOURNAL/LOG FILES
+-------------------------------
+List of Journal/Log files that were added to the archived project:-
+
+Source File = C:/Users/cssjh/AppData/Roaming/Xilinx/Vivado/vivado.jou
+Archived Location = ./pat_testharness-testsocket/vivado.jou
+
+Source File = C:/Users/cssjh/AppData/Roaming/Xilinx/Vivado/vivado.log
+Archived Location = ./pat_testharness-testsocket/vivado.log
+
+Section (5) - CONFIGURATION SETTINGS/FILES
+------------------------------------------
+List of configuration settings/files that were added to the archived project:-
+
+

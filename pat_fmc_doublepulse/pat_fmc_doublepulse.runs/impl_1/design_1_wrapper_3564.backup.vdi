@@ -1,0 +1,651 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Mon Jun 08 16:52:38 2015
+# Process ID: 6736
+# Log file: C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:0.9 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.0 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.1 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/kintex7/kc705/1.1/board_part.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:0.9 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/zynq/zc706/0.9/board_part.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.0 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/zynq/zc706/1.0/board_part.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.1 available at C:/Xilinx/Vivado/2014.4/data/boards/board_parts/zynq/zc706/1.1/board_part.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 149 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.4/data\parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.4/data\./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc] for cell 'design_1_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc] for cell 'design_1_i/rst_processing_system7_0_100M'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc] for cell 'design_1_i/rst_processing_system7_0_100M'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc] for cell 'design_1_i/rst_processing_system7_0_100M'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc] for cell 'design_1_i/rst_processing_system7_0_100M'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0_board.xdc] for cell 'design_1_i/axi_iic_0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0_board.xdc] for cell 'design_1_i/axi_iic_0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0_board.xdc] for cell 'design_1_i/axi_gpio_modes/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0_board.xdc] for cell 'design_1_i/axi_gpio_modes/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0.xdc] for cell 'design_1_i/axi_gpio_modes/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_modes_0_1/design_1_axi_gpio_modes_0.xdc] for cell 'design_1_i/axi_gpio_modes/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0_board.xdc] for cell 'design_1_i/axi_gpio_dac/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0_board.xdc] for cell 'design_1_i/axi_gpio_dac/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0.xdc] for cell 'design_1_i/axi_gpio_dac/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_dac_0_1/design_1_axi_gpio_dac_0.xdc] for cell 'design_1_i/axi_gpio_dac/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0_board.xdc] for cell 'design_1_i/axi_gpio_abpins/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0_board.xdc] for cell 'design_1_i/axi_gpio_abpins/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0.xdc] for cell 'design_1_i/axi_gpio_abpins/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_abpins_0_1/design_1_axi_gpio_abpins_0.xdc] for cell 'design_1_i/axi_gpio_abpins/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0_board.xdc] for cell 'design_1_i/axi_gpio_pwm/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0_board.xdc] for cell 'design_1_i/axi_gpio_pwm/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0.xdc] for cell 'design_1_i/axi_gpio_pwm/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_pwm_0_1/design_1_axi_gpio_pwm_0.xdc] for cell 'design_1_i/axi_gpio_pwm/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0_board.xdc] for cell 'design_1_i/axi_gpio_clock/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0_board.xdc] for cell 'design_1_i/axi_gpio_clock/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0.xdc] for cell 'design_1_i/axi_gpio_clock/U0'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_clock_0_1/design_1_axi_gpio_clock_0.xdc] for cell 'design_1_i/axi_gpio_clock/U0'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0_board.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0_board.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xdc:56]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xdc:56]
+get_clocks: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 976.531 ; gain = 484.723
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+Parsing XDC File [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[0]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[1]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[2]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[3]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[4]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[5]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:121]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:121]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[6]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:122]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:122]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[7]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:123]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:123]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[8]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[9]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[10]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:126]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:126]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[*]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_dac_tri_io[*]'. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this comm     and returns at least one valid object.
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Instance iic_axi_sda_iobuf/OBUFT can not be placed in OUTBUF of site IOB_X1Y0 because the bel is occupied by clk_pat_locked_OBUF_inst. This could be caused by bel constraint conflict [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc:178]
+Resolution: Verify the location constraints for differential ports are correctly specified in your constraints. The Site type should be of form: IO_LxxP for P-side, and IO_LxxN for N-side (Neg Diff Pair) 
+Finished Parsing XDC File [C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/constrs_1/imports/constraints/pat_testharness-constraints-fmc.xdc]
+Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0_late.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+Finished Parsing XDC File [c:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.srcs/sources_1/bd/design_1/ip/design_1_clk_pat_0_1/design_1_clk_pat_0_late.xdc] for cell 'design_1_i/clk_pat_RnM/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 60 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 50 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 10 instances
+
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 977.563 ; gain = 787.566
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.141 . Memory (MB): peak = 983.457 ; gain = 3.941
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: ff4b68c3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.324 . Memory (MB): peak = 983.457 ; gain = 0.000
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 437 cells.
+Phase 2 Constant Propagation | Checksum: 1e3d03616
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 983.457 ; gain = 0.000
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 655 unconnected nets.
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-11] Eliminated 322 unconnected cells.
+Phase 3 Sweep | Checksum: bd00c2a4
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 983.457 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: bd00c2a4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 983.457 ; gain = 0.000
+Implement Debug Cores | Checksum: ff4b68c3
+Logic Optimization | Checksum: ff4b68c3
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 3.13 ns.
+Ending Power Optimization Task | Checksum: bd00c2a4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 983.457 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 19 Warnings, 14 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 983.457 ; gain = 0.000
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.runs/impl_1/design_1_wrapper_drc_opted.rpt.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Runtime Estimator
+Phase 1 Placer Runtime Estimator | Checksum: 96bb3592
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.120 . Memory (MB): peak = 983.457 ; gain = 0.000
+
+Phase 2 Placer Initialization
+
+Phase 2.1 Placer Initialization Core
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 983.457 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 983.457 ; gain = 0.000
+
+Phase 2.1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 2.1.1.1 Pre-Place Cells
+Phase 2.1.1.1 Pre-Place Cells | Checksum: 377451d7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.198 . Memory (MB): peak = 983.457 ; gain = 0.000
+WARNING: [Place 30-87] Partially locked IO Bus is found. Following components of the IO Bus gpio_modes_tri_io are not locked:  'gpio_modes_tri_io[31]'  'gpio_modes_tri_io[30]'  'gpio_modes_tri_io[29]'  'gpio_modes_tri_io[28]'  'gpio_modes_tri_io[27]'  'gpio_modes_tri_io[26]'  'gpio_modes_tri_io[25]'  'gpio_modes_tri_io[24]'  'gpio_modes_tri_io[23]'  'gpio_modes_tri_io[22]'  'gpio_modes_tri_io[21]'  'gpio_modes_tri_io[20]'  'gpio_modes_tri_io[19]'  'gpio_modes_tri_io[18]'  'gpio_modes_tri_io[17]'  'gpio_modes_tri_io[16]'  'gpio_modes_tri_io[15]'  'gpio_modes_tri_io[14]'  'gpio_modes_tri_io[13]'  'gpio_modes_tri_io[12]'  'gpio_modes_tri_io[11]'  'gpio_modes_tri_io[10]'  'gpio_modes_tri_io[9]'  'gpio_modes_tri_io[8]'  'gpio_modes_tri_io[7]'  'gpio_modes_tri_io[6]'  'gpio_modes_tri_io[5]' 
+WARNING: [Place 30-87] Partially locked IO Bus is found. Following components of the IO Bus gpio_rtl_tri_io are not locked:  'gpio_rtl_tri_io[6]'  'gpio_rtl_tri_io[5]' 
+WARNING: [Place 30-12] An IO Bus FIXED_IO_mio with more than one IO standard is found. Components associated with this bus are: 
+	FIXED_IO_mio[53] of IOStandard LVCMOS18
+	FIXED_IO_mio[52] of IOStandard LVCMOS18
+	FIXED_IO_mio[51] of IOStandard LVCMOS18
+	FIXED_IO_mio[50] of IOStandard LVCMOS18
+	FIXED_IO_mio[49] of IOStandard LVCMOS18
+	FIXED_IO_mio[48] of IOStandard LVCMOS18
+	FIXED_IO_mio[47] of IOStandard LVCMOS18
+	FIXED_IO_mio[46] of IOStandard LVCMOS18
+	FIXED_IO_mio[45] of IOStandard LVCMOS18
+	FIXED_IO_mio[44] of IOStandard LVCMOS18
+	FIXED_IO_mio[43] of IOStandard LVCMOS18
+	FIXED_IO_mio[42] of IOStandard LVCMOS18
+	FIXED_IO_mio[41] of IOStandard LVCMOS18
+	FIXED_IO_mio[40] of IOStandard LVCMOS18
+	FIXED_IO_mio[39] of IOStandard LVCMOS18
+	FIXED_IO_mio[38] of IOStandard LVCMOS18
+	FIXED_IO_mio[37] of IOStandard LVCMOS18
+	FIXED_IO_mio[36] of IOStandard LVCMOS18
+	FIXED_IO_mio[35] of IOStandard LVCMOS18
+	FIXED_IO_mio[34] of IOStandard LVCMOS18
+	FIXED_IO_mio[33] of IOStandard LVCMOS18
+	FIXED_IO_mio[32] of IOStandard LVCMOS18
+	FIXED_IO_mio[31] of IOStandard LVCMOS18
+	FIXED_IO_mio[30] of IOStandard LVCMOS18
+	FIXED_IO_mio[29] of IOStandard LVCMOS18
+	FIXED_IO_mio[28] of IOStandard LVCMOS18
+	FIXED_IO_mio[27] of IOStandard LVCMOS18
+	FIXED_IO_mio[26] of IOStandard LVCMOS18
+	FIXED_IO_mio[25] of IOStandard LVCMOS18
+	FIXED_IO_mio[24] of IOStandard LVCMOS18
+	FIXED_IO_mio[23] of IOStandard LVCMOS18
+	FIXED_IO_mio[22] of IOStandard LVCMOS18
+	FIXED_IO_mio[21] of IOStandard LVCMOS18
+	FIXED_IO_mio[20] of IOStandard LVCMOS18
+	FIXED_IO_mio[19] of IOStandard LVCMOS18
+	FIXED_IO_mio[18] of IOStandard LVCMOS18
+	FIXED_IO_mio[17] of IOStandard LVCMOS18
+	FIXED_IO_mio[16] of IOStandard LVCMOS18
+	FIXED_IO_mio[15] of IOStandard LVCMOS33
+	FIXED_IO_mio[14] of IOStandard LVCMOS33
+	FIXED_IO_mio[13] of IOStandard LVCMOS33
+	FIXED_IO_mio[12] of IOStandard LVCMOS33
+	FIXED_IO_mio[11] of IOStandard LVCMOS33
+	FIXED_IO_mio[10] of IOStandard LVCMOS33
+	FIXED_IO_mio[9] of IOStandard LVCMOS33
+	FIXED_IO_mio[8] of IOStandard LVCMOS33
+	FIXED_IO_mio[7] of IOStandard LVCMOS33
+	FIXED_IO_mio[6] of IOStandard LVCMOS33
+	FIXED_IO_mio[5] of IOStandard LVCMOS33
+	FIXED_IO_mio[4] of IOStandard LVCMOS33
+	FIXED_IO_mio[3] of IOStandard LVCMOS33
+	FIXED_IO_mio[2] of IOStandard LVCMOS33
+	FIXED_IO_mio[1] of IOStandard LVCMOS33
+	FIXED_IO_mio[0] of IOStandard LVCMOS33
+WARNING: [Place 30-12] An IO Bus gpio_rtl_tri_io with more than one IO standard is found. Components associated with this bus are: 
+	gpio_rtl_tri_io[15] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[14] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[13] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[12] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[11] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[10] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[9] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[8] of IOStandard LVCMOS33
+	gpio_rtl_tri_io[7] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[6] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[5] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[4] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[3] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[2] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[1] of IOStandard LVCMOS18
+	gpio_rtl_tri_io[0] of IOStandard LVCMOS18
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 2.1.1.2 IO & Clk Clean Up
+Phase 2.1.1.2 IO & Clk Clean Up | Checksum: 377451d7
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 2.1.1.3 Implementation Feasibility check On IDelay
+Phase 2.1.1.3 Implementation Feasibility check On IDelay | Checksum: 377451d7
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 2.1.1.4 Commit IO Placement
+Phase 2.1.1.4 Commit IO Placement | Checksum: da88a9bb
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2.1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1c9f9432c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 2.1.2 Build Placer Netlist Model
+
+Phase 2.1.2.1 Place Init Design
+
+Phase 2.1.2.1.1 Init Lut Pin Assignment
+Phase 2.1.2.1.1 Init Lut Pin Assignment | Checksum: 210bec9a1
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2.1.2.1 Place Init Design | Checksum: 2187afe90
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2.1.2 Build Placer Netlist Model | Checksum: 2187afe90
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 2.1.3 Constrain Clocks/Macros
+
+Phase 2.1.3.1 Constrain Global/Regional Clocks
+Phase 2.1.3.1 Constrain Global/Regional Clocks | Checksum: 292ae0c4e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2.1.3 Constrain Clocks/Macros | Checksum: 292ae0c4e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2.1 Placer Initialization Core | Checksum: 292ae0c4e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 2 Placer Initialization | Checksum: 292ae0c4e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 3 Global Placement
+Phase 3 Global Placement | Checksum: 2c670915b
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4 Detail Placement
+
+Phase 4.1 Commit Multi Column Macros
+Phase 4.1 Commit Multi Column Macros | Checksum: 2c670915b
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.2 Commit Most Macros & LUTRAMs
+Phase 4.2 Commit Most Macros & LUTRAMs | Checksum: 2c6270fae
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.3 Area Swap Optimization
+Phase 4.3 Area Swap Optimization | Checksum: 1e6ed9fcf
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.4 updateClock Trees: DP
+Phase 4.4 updateClock Trees: DP | Checksum: 1e6ed9fcf
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.5 Timing Path Optimizer
+Phase 4.5 Timing Path Optimizer | Checksum: 2500429f4
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.6 Small Shape Detail Placement
+
+Phase 4.6.1 Commit Small Macros & Core Logic
+
+Phase 4.6.1.1 setBudgets
+Phase 4.6.1.1 setBudgets | Checksum: 258f8874d
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.6.1.2 Commit Slice Clusters
+Phase 4.6.1.2 Commit Slice Clusters | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 4.6.1 Commit Small Macros & Core Logic | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns
+Phase 4.6.2 Clock Restriction Legalization for Leaf Columns | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins
+Phase 4.6.3 Clock Restriction Legalization for Non-Clock Pins | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 4.6 Small Shape Detail Placement | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 4.7 Re-assign LUT pins
+Phase 4.7 Re-assign LUT pins | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 4 Detail Placement | Checksum: 26af39a36
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5 Post Placement Optimization and Clean-Up
+
+Phase 5.1 PCOPT Shape updates
+Phase 5.1 PCOPT Shape updates | Checksum: 1cc15e0dc
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.2 Post Commit Optimization
+
+Phase 5.2.1 updateClock Trees: PCOPT
+Phase 5.2.1 updateClock Trees: PCOPT | Checksum: 1cc15e0dc
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.2.2 Post Placement Optimization
+
+Phase 5.2.2.1 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=3.220. For the most accurate timing information please run report_timing.
+Phase 5.2.2.1 Post Placement Timing Optimization | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 5.2.2 Post Placement Optimization | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 5.2 Post Commit Optimization | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.3 Sweep Clock Roots: Post-Placement
+Phase 5.3 Sweep Clock Roots: Post-Placement | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.4 Post Placement Cleanup
+Phase 5.4 Post Placement Cleanup | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.5 Placer Reporting
+
+Phase 5.5.1 Restore STA
+Phase 5.5.1 Restore STA | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 5.5 Placer Reporting | Checksum: 15c5b2466
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+
+Phase 5.6 Final Placement Cleanup
+Phase 5.6 Final Placement Cleanup | Checksum: 14808654f
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Phase 5 Post Placement Optimization and Clean-Up | Checksum: 14808654f
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Ending Placer Task | Checksum: d18f8450
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1004.305 ; gain = 20.848
+INFO: [Common 17-83] Releasing license: Implementation
+37 Infos, 23 Warnings, 14 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 1004.305 ; gain = 20.848
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.983 . Memory (MB): peak = 1004.305 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1004.305 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.165 . Memory (MB): peak = 1004.305 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1004.305 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [Drc 23-27] Running DRC with 2 threads
+WARNING: [Drc 23-20] Rule violation (PLIO-3) Placement Constraints Check for IO constraints - Partially locked IO Bus is found. Following components of the IO Bus gpio_modes_tri_io[31:0] are not locked:  gpio_modes_tri_io[31] gpio_modes_tri_io[30] gpio_modes_tri_io[29] gpio_modes_tri_io[28] gpio_modes_tri_io[27] gpio_modes_tri_io[26] gpio_modes_tri_io[25] gpio_modes_tri_io[24] gpio_modes_tri_io[23] gpio_modes_tri_io[22] gpio_modes_tri_io[21] gpio_modes_tri_io[20] gpio_modes_tri_io[19] gpio_modes_tri_io[18] gpio_modes_tri_io[17] gpio_modes_tri_io[16] gpio_modes_tri_io[15] gpio_modes_tri_io[14] gpio_modes_tri_io[13] gpio_modes_tri_io[12] gpio_modes_tri_io[11] gpio_modes_tri_io[10] gpio_modes_tri_io[9] gpio_modes_tri_io[8] gpio_modes_tri_io[7] gpio_modes_tri_io[6] gpio_modes_tri_io[5]
+WARNING: [Drc 23-20] Rule violation (PLIO-3) Placement Constraints Check for IO constraints - Partially locked IO Bus is found. Following components of the IO Bus gpio_rtl_tri_io[15:0] are not locked:  gpio_rtl_tri_io[6] gpio_rtl_tri_io[5]
+WARNING: [Drc 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus FIXED_IO_mio[53:0] with more than one IO standard is found. Components associated with this bus are:  FIXED_IO_mio[53] of IOStandard LVCMOS18; FIXED_IO_mio[52] of IOStandard LVCMOS18; FIXED_IO_mio[51] of IOStandard LVCMOS18; FIXED_IO_mio[50] of IOStandard LVCMOS18; FIXED_IO_mio[49] of IOStandard LVCMOS18; FIXED_IO_mio[48] of IOStandard LVCMOS18; FIXED_IO_mio[47] of IOStandard LVCMOS18; FIXED_IO_mio[46] of IOStandard LVCMOS18; FIXED_IO_mio[45] of IOStandard LVCMOS18; FIXED_IO_mio[44] of IOStandard LVCMOS18; FIXED_IO_mio[43] of IOStandard LVCMOS18; FIXED_IO_mio[42] of IOStandard LVCMOS18; FIXED_IO_mio[41] of IOStandard LVCMOS18; FIXED_IO_mio[40] of IOStandard LVCMOS18; FIXED_IO_mio[39] of IOStandard LVCMOS18; FIXED_IO_mio[38] of IOStandard LVCMOS18; FIXED_IO_mio[37] of IOStandard LVCMOS18; FIXED_IO_mio[36] of IOStandard LVCMOS18; FIXED_IO_mio[35] of IOStandard LVCMOS18; FIXED_IO_mio[34] of IOStandard LVCMOS18; FIXED_IO_mio[33] of IOStandard LVCMOS18; FIXED_IO_mio[32] of IOStandard LVCMOS18; FIXED_IO_mio[31] of IOStandard LVCMOS18; FIXED_IO_mio[30] of IOStandard LVCMOS18; FIXED_IO_mio[29] of IOStandard LVCMOS18; FIXED_IO_mio[28] of IOStandard LVCMOS18; FIXED_IO_mio[27] of IOStandard LVCMOS18; FIXED_IO_mio[26] of IOStandard LVCMOS18; FIXED_IO_mio[25] of IOStandard LVCMOS18; FIXED_IO_mio[24] of IOStandard LVCMOS18; FIXED_IO_mio[23] of IOStandard LVCMOS18; FIXED_IO_mio[22] of IOStandard LVCMOS18; FIXED_IO_mio[21] of IOStandard LVCMOS18; FIXED_IO_mio[20] of IOStandard LVCMOS18; FIXED_IO_mio[19] of IOStandard LVCMOS18; FIXED_IO_mio[18] of IOStandard LVCMOS18; FIXED_IO_mio[17] of IOStandard LVCMOS18; FIXED_IO_mio[16] of IOStandard LVCMOS18; FIXED_IO_mio[15] of IOStandard LVCMOS33; FIXED_IO_mio[14] of IOStandard LVCMOS33; FIXED_IO_mio[13] of IOStandard LVCMOS33; FIXED_IO_mio[12] of IOStandard LVCMOS33; FIXED_IO_mio[11] of IOStandard LVCMOS33; FIXED_IO_mio[10] of IOStandard LVCMOS33; FIXED_IO_mio[9] of IOStandard LVCMOS33; FIXED_IO_mio[8] of IOStandard LVCMOS33; FIXED_IO_mio[7] of IOStandard LVCMOS33; FIXED_IO_mio[6] of IOStandard LVCMOS33; FIXED_IO_mio[5] of IOStandard LVCMOS33; FIXED_IO_mio[4] of IOStandard LVCMOS33; FIXED_IO_mio[3] of IOStandard LVCMOS33; FIXED_IO_mio[2] of IOStandard LVCMOS33; FIXED_IO_mio[1] of IOStandard LVCMOS33; FIXED_IO_mio[0] of IOStandard LVCMOS33;
+WARNING: [Drc 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus gpio_rtl_tri_io[15:0] with more than one IO standard is found. Components associated with this bus are:  gpio_rtl_tri_io[15] of IOStandard LVCMOS33; gpio_rtl_tri_io[14] of IOStandard LVCMOS33; gpio_rtl_tri_io[13] of IOStandard LVCMOS33; gpio_rtl_tri_io[12] of IOStandard LVCMOS33; gpio_rtl_tri_io[11] of IOStandard LVCMOS33; gpio_rtl_tri_io[10] of IOStandard LVCMOS33; gpio_rtl_tri_io[9] of IOStandard LVCMOS33; gpio_rtl_tri_io[8] of IOStandard LVCMOS33; gpio_rtl_tri_io[7] of IOStandard LVCMOS18; gpio_rtl_tri_io[6] of IOStandard LVCMOS18; gpio_rtl_tri_io[5] of IOStandard LVCMOS18; gpio_rtl_tri_io[4] of IOStandard LVCMOS18; gpio_rtl_tri_io[3] of IOStandard LVCMOS18; gpio_rtl_tri_io[2] of IOStandard LVCMOS18; gpio_rtl_tri_io[1] of IOStandard LVCMOS18; gpio_rtl_tri_io[0] of IOStandard LVCMOS18;
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 4 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: a77ded2e
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1110.684 ; gain = 106.379
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: a77ded2e
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1111.332 ; gain = 107.027
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: a77ded2e
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1119.727 ; gain = 115.422
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 15451e43f
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:27 . Memory (MB): peak = 1147.621 ; gain = 143.316
+INFO: [Route 35-57] Estimated Timing Summary | WNS=3.27   | TNS=0      | WHS=-1.5   | THS=-190   |
+
+Phase 2 Router Initialization | Checksum: 1456f160f
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1147.621 ; gain = 143.316
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1177ba270
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:28 . Memory (MB): peak = 1166.457 ; gain = 162.152
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 581
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 13c7b0c2c
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:31 . Memory (MB): peak = 1166.457 ; gain = 162.152
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.14   | TNS=0      | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: d9eaf857
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:31 . Memory (MB): peak = 1166.457 ; gain = 162.152
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: e600780d
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.14   | TNS=0      | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 18b78b355
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+Phase 4 Rip-up And Reroute | Checksum: 18b78b355
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 5 Delay CleanUp
+
+Phase 5.1 Update Timing
+Phase 5.1 Update Timing | Checksum: 16f03b0e3
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.15   | TNS=0      | WHS=N/A    | THS=N/A    |
+
+Phase 5 Delay CleanUp | Checksum: 16f03b0e3
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 6 Clock Skew Optimization
+Phase 6 Clock Skew Optimization | Checksum: 16f03b0e3
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 128691946
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:35 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.15   | TNS=0      | WHS=-0.188 | THS=-0.891 |
+
+Phase 7 Post Hold Fix | Checksum: 167317584
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.45325 %
+  Global Horizontal Routing Utilization  = 1.67098 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 14ba1e1df
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 14ba1e1df
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1117a992c
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+
+Phase 11 Post Router Timing
+
+Phase 11.1 Update Timing
+Phase 11.1 Update Timing | Checksum: 1117a992c
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.15   | TNS=0      | WHS=0.054  | THS=0      |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 11 Post Router Timing | Checksum: 1117a992c
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:37 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Route 35-16] Router Completed Successfully
+
+Routing Is Done.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:38 . Memory (MB): peak = 1193.414 ; gain = 189.109
+INFO: [Common 17-83] Releasing license: Implementation
+51 Infos, 27 Warnings, 14 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 1193.414 ; gain = 189.109
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1193.414 ; gain = 0.000
+INFO: [Drc 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Xilinx/Projects/June/pat_testharness_fmc/pat_testharness_fmc.runs/impl_1/design_1_wrapper_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-218] MMCM/PLL RST static_probability should be either 0 or 1, power analysis is using 0 by default.
+Use 'set_switching_activity -static_probability 1 -signal_rate 0 [get_nets design_1_i/clk_pat_RnM/inst/CLK_CORE_DRP_I/mmcm_drp_inst/RST_MMCM_PLL]'  to set the static_probability to '1'  if desired.
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 08 16:54:05 2015...

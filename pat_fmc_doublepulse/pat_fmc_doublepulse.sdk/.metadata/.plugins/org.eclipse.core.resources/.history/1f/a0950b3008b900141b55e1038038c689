@@ -1,0 +1,560 @@
+
+
+
+#include <stdio.h>
+//#include "platform.h"
+
+#include "xparameters.h" // has the peripheral address definitions
+#include "xscutimer.h"
+#include "pat_tests.h"
+
+unsigned calcPeriod(unsigned input_period, unsigned desired_period)
+{
+	return desired_period / input_period ; // integer only result
+}
+
+
+void timerWait(XScuTimer* SCUTimer, unsigned period)
+{
+	XScuTimer_Stop(SCUTimer) ;
+	XScuTimer_LoadTimer(SCUTimer, period) ;
+	XScuTimer_DisableAutoReload(SCUTimer) ;
+
+	XScuTimer_Start(SCUTimer) ;
+	    while (XScuTimer_GetCounterValue(SCUTimer) > 0)
+	    {
+	    }
+	XScuTimer_Stop(SCUTimer) ;
+	return ;
+}
+
+#define QUAD_LED_IIC_ADDRESS 0x10eff0
+void writeQuadLED(unsigned a, unsigned b, unsigned c, unsigned d)
+{
+	unsigned *transmit_buffer ;
+	transmit_buffer =  XPAR_AXI_IIC_0_BASEADDR + 0x108; // hard coded LED badse adddress - can't find definition
+	*transmit_buffer = QUAD_LED_IIC_ADDRESS ; // transmit slave address
+	*transmit_buffer = 0x0e ; // segment test - all on
+	*transmit_buffer = a ;
+	*transmit_buffer = b ;
+	*transmit_buffer = c ;
+	*transmit_buffer = d ;
+}
+
+unsigned measureClkReturn(XScuTimer* SCUTimer)
+{
+	unsigned *clk_measure_control ;
+	unsigned *clk_measurement ;
+	unsigned *clk_measurement_ctrl ;
+	clk_measure_control = (unsigned*) XPAR_AXI_GPIO_CLOCK_BASEADDR ;
+	clk_measurement = (unsigned*) XPAR_AXI_GPIO_CLOCK_BASEADDR + 0x08;
+	clk_measurement_ctrl = (unsigned*) XPAR_AXI_GPIO_CLOCK_BASEADDR + 0x0c;
+
+	* clk_measurement_ctrl = 0xffffffff ; // set all to inputs
+
+	// note this will interfere in pat clock setup too. Need to OR in existing state
+	*clk_measure_control =  0x00 ; // reset, not enabled
+	timerWait(SCUTimer, 0xfffff) ;
+	*clk_measure_control =  0x0c ; // enabled, not reset
+	timerWait(SCUTimer, 0xfffffff) ; // wait for measurement
+	return *clk_measurement ;
+}
+
+
+void setAs(char bits)
+{
+	unsigned *As ;
+	As = (unsigned*) XPAR_AXI_GPIO_ABPINS_BASEADDR ;
+	*As = bits ;
+	return ;
+}
+
+void setBs(char bits)
+{
+	unsigned *Bs ;
+	unsigned *Bs_tri ;
+	Bs = (unsigned*) (XPAR_AXI_GPIO_ABPINS_BASEADDR + 0x08)  ;
+	Bs_tri = (unsigned*) (XPAR_AXI_GPIO_ABPINS_BASEADDR + 0x0c)  ;
+	*Bs_tri = 0xf0 ;
+	*Bs = bits ;
+	return ;
+}
+
+char readAs()
+{
+	unsigned *As ;
+	unsigned bits ;
+	As = (unsigned*) XPAR_AXI_GPIO_ABPINS_BASEADDR ;
+	bits = *As ;
+	return bits ;
+}
+
+char readBs()
+{
+	unsigned bits ;
+	unsigned *Bs ;
+	unsigned *Bs_tri ;
+	Bs_tri = (unsigned*) (XPAR_AXI_GPIO_ABPINS_BASEADDR + 0x0c)  ;
+	*Bs_tri = 0xff ;
+	Bs = (unsigned*) (XPAR_AXI_GPIO_ABPINS_BASEADDR + 0x08)  ;
+	bits = *Bs ;
+	return bits ;
+}
+
+
+void setModes(unsigned mode, unsigned f5v_sel, unsigned vref_sel, unsigned clk_sel)
+{
+	unsigned *mode_p ;
+	unsigned *mode_p_tri ;
+	mode_p = (unsigned*) XPAR_AXI_GPIO_MODES_BASEADDR ;
+	mode_p_tri = (unsigned*) XPAR_AXI_GPIO_MODES_BASEADDR + 0x04 ;
+	*mode_p_tri = 0x00 ; // 5 bits of output ; must be done before writes to the out reg.
+	*mode_p = ((clk_sel & 0x1) << 4) | ((vref_sel & 0x1) << 3) | ((f5v_sel & 0x1) << 2) | (mode & 0x3) ;
+
+	return ;
+}
+
+
+// isClkGen = 1 enables manual clk generator; 0 sets clock output to FPGA Clock gen
+void setExtClockSource(unsigned isManualClk)
+{
+	unsigned *clk_source ;
+	clk_source = (unsigned*) XPAR_AXI_GPIO_CLOCK_BASEADDR ;
+	*clk_source = (isManualClk & 0x01) << 1 ;
+	return ;
+}
+
+#define MANUAL_CLOCK_PERIOD  333333    // @ 3ns/tick => 333 = 1us
+void manualClockPulse(XScuTimer* SCUTimer)
+{
+	unsigned *clk_source ;
+	clk_source = (unsigned*) XPAR_AXI_GPIO_CLOCK_BASEADDR ;
+
+	*clk_source = 0x3 ;
+	timerWait(SCUTimer, MANUAL_CLOCK_PERIOD) ;
+	*clk_source = 0x2 ;
+//	print("One pulse generated\n\r") ;
+	return ;
+}
+
+
+// Set DAC output. 0's actively driven low; 1's tri-stated
+#define DAC_WRITE_PERIOD 0xfff
+void setDAC(XScuTimer* SCUTimer, unsigned value, unsigned verbose)
+{
+	unsigned* dac ;
+	unsigned* dac_tristate ;
+	dac = (unsigned*) XPAR_AXI_GPIO_DAC_BASEADDR ;
+	dac_tristate = (XPAR_AXI_GPIO_DAC_BASEADDR + 0x04) ; // Tristate: '1' := input '0' := output
+	*dac_tristate = value & 0x3ff ;
+	*dac = value & 0x3ff ;
+
+	if (verbose) printf("Setting DAC value to %d\n\r", value) ;
+
+	// now pulse write pin
+	*dac_tristate = (value & 0x3ff) | 0x400 ;
+	*dac = (value & 0x3ff) | 0x400 ;
+	timerWait(SCUTimer, DAC_WRITE_PERIOD) ;
+	*dac = value & 0x3ff ;
+	*dac_tristate = value & 0x3ff ;
+	if (verbose) print("DAC set.\n\r") ;
+	return ;
+}
+
+
+#define SCLK_WAIT 0xfffff
+// Send a byte out to the chip's sin interface
+void sclkOutByte(XScuTimer* SCUTimer, char byte, char ssel, char saddr, char s_low_high)
+{
+	int i ;
+	for (i = 0 ; i < 8 ; i++)
+	{
+		char bit ;
+		char byte_out ;
+		bit = (byte >> i) & 0x01 ;
+		byte_out = (ssel & 0x01 << 1) | (bit << 2) | ((saddr & 0x7) << 3) | ((s_low_high & 0x01) << 7) ;
+		setAs(byte_out) ;
+		// wait, then set clock
+		timerWait(SCUTimer, SCLK_WAIT) ;
+		byte_out |= 0x01 ;
+		setAs(byte_out) ;
+		timerWait(SCUTimer, SCLK_WAIT) ;
+		byte_out &= 0xfe ;
+		setAs(byte_out) ; // reset sclk to 0
+	}
+}
+
+
+// Configure low or high side to be on manual override for output pattern selection
+void setPatternOverride(char s_low_high, char saddr)
+{
+	char byte_out ;
+	byte_out = (0x01 << 1) | ((saddr & 0x7) << 3) | ((s_low_high & 0x01) << 7) ; // this includes ssel
+	setAs(byte_out) ;
+
+	return ;
+}
+
+
+
+
+char tweakToByte(tweak t)
+{
+	char byte ;
+	byte = (t.sense << 6 | t.duration << 4 | t.delay << 1 | t.enable) ;
+	return byte ;
+}
+
+
+void loadPattern(pattern p, XScuTimer* SCUTimer, char s_low_high, char saddr)
+{
+	char ssel = 1 ; // fix ssel to active
+
+	printf("Programming pattern with n-Drive strength %#x\n",p.n_drive) ;
+	printf("...and with p-Drive strength %#x\n",p.p_drive) ;
+
+	setExtClockSource(CLK_EXT_PLL) ;
+	setModes(MODE_DEBUG, 0, 0, CLK_EXT) ;
+
+	// Load in the pattern, most significant byte and MSBit first.
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_5), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_4), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_3), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_2), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_1), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.n_tweak_0), ssel, saddr, s_low_high) ;
+
+	sclkOutByte(SCUTimer, p.n_tweak_delay, ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, p.n_drive, ssel, saddr, s_low_high) ;
+
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_5), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_4), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_3), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_2), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_1), ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, tweakToByte(p.p_tweak_0), ssel, saddr, s_low_high) ;
+
+	sclkOutByte(SCUTimer, p.p_tweak_delay, ssel, saddr, s_low_high) ;
+	sclkOutByte(SCUTimer, p.p_drive, ssel, saddr, s_low_high) ;
+
+	return ;
+}
+
+
+void loadDrivesOnly(XScuTimer* SCUTimer, char p_drive, char n_drive, char thePWM, char address)
+{
+	int i ;
+	char ssel = 1 ; // fix ssel to active
+	for (i = 0 ; i < 6 ; i++) sclkOutByte(SCUTimer, 0, ssel, address, thePWM) ;
+	sclkOutByte(SCUTimer, n_drive, ssel, address, thePWM) ;
+	for (i = 0 ; i < 6 ; i++) sclkOutByte(SCUTimer, 0, ssel, address, thePWM) ;
+	sclkOutByte(SCUTimer, p_drive, ssel, address, thePWM) ;
+
+	return ;
+}
+
+
+
+/*
+ *  Run-time tests
+ */
+
+void runTestRingOscillator()
+{
+	print("Starting ring oscillator test program...\n\r") ;
+	setModes(0x0, 0x0, 0x0, 0x0) ;
+	setAs(0x58) ;
+	while(1)
+	{
+		printf("Output seen is Osc1: %x, Osc2: %x\n\r", ((readBs()>> 6) & 0x1), ((readBs()>> 7) & 0x1) ) ;
+	}
+}
+
+#define TEST_CLOCK_PERIOD 0xffffff
+#define TEST_CLOCK_VCO_VOLTAGE 0x1f
+void runTestClock(XScuTimer* SCUTimer, unsigned isExtClock)
+{
+	print("Running clock tests\n\r") ;
+	print("Running external clock test...\n\r") ;
+	setModes(0x0, 0x0, 0x0, 0x1) ;
+	setExtClockSource(1) ; // use FPGA clock generator at ~20MHz
+
+	print("You should now see a ~1.25MHz waveform on test chip's clock_out\n\r") ;
+	timerWait(SCUTimer, TEST_CLOCK_PERIOD) ;
+
+
+	print("Switching over to test chip's internal clock.") ;
+	setDAC(SCUTimer, TEST_CLOCK_VCO_VOLTAGE) ;
+	setModes(0x0, 0x0, 0x0, 0x0) ;
+	print("You should now see a ~31MHz waveform on test chip's clock_out\n\r") ;
+}
+
+
+#define TEST_DRIVE_WAIT 0xfffff
+// Test the p and n drivers weakly in an alternating pattern
+void runTestDrive(XScuTimer* SCUTimer)
+{
+	print("Running drive test on low side\n\r") ;
+	print("Setting drivers to pull up weakly...\n\r") ;
+	loadDrivesOnly(SCUTimer, 0x01, 0x00, PWM_LOW, 0) ;
+
+	setPatternOverride(PWM_LOW, 0) ;
+	timerWait(SCUTimer, TEST_DRIVE_WAIT) ;
+
+	print("Setting drivers to high impedence...\n\r") ;
+	loadDrivesOnly(SCUTimer, 0x00, 0x00, PWM_LOW, 0) ;
+	setPatternOverride(PWM_LOW, 0) ;
+
+	print("Setting drivers to pull down weakly...\n\r") ;
+	loadDrivesOnly(SCUTimer, 0x00, 0x01, PWM_LOW, 0) ;
+	setPatternOverride(PWM_LOW, 0) ;
+
+	print("Low side tests done. Setting to high impedence\n\r") ;
+	loadDrivesOnly(SCUTimer, 0x00, 0x00, PWM_LOW, 0) ;
+	setPatternOverride(PWM_LOW, 0) ;
+
+	return ;
+}
+
+
+#define MEMLOAD_DATA_WAIT 0xfffff
+#define MEMLOAD_CLOCK_WAIT 0xfffff
+void loadMemory(XScuTimer* SCUTimer, unsigned startAddress, unsigned length, instruction instrs[])
+{
+/*	reg [57:0] input_shifter ;
+wire [9:0] imem_write_adr ;
+wire [45:0] imem_in ;
+*/
+	iLoad toLoad ;
+	char byte ;
+	char aLoad[8] ;
+	int i ;
+	int j ;
+	unsigned address ;
+	unsigned* p_i1 ;
+	unsigned* p_i2 ;
+	unsigned i1 ;
+	unsigned i2 ;
+
+	printf("Loading %d memory locations starting from %#x...\n", length, startAddress) ;
+	setModes(MODE_MEMLOAD, F5V_INT, VREF_INT, CLK_INT) ; // Need to clock continually whilst perfoming I/O ops.
+	timerWait(SCUTimer, MEMLOAD_DATA_WAIT) ;
+
+	for (i = 0 ; i < length / 2 ; i++)
+	{
+		toLoad.i1 = instrs[i*2] ;
+		toLoad.i2 = instrs[(i*2)+1] ;
+		address = startAddress + i ;
+		toLoad.address = address ; // todo: accounts for fact that address is halved
+
+		p_i1 = (unsigned*) &toLoad.i1 ;
+		p_i2 = (unsigned*) &toLoad.i2 ;
+		i1 = *p_i1 ;
+		i2 = *p_i2 ;
+
+
+		// Now convert the packed instruction to bytes and send to the chip
+	/*	for (j = 6 ; j >=0 ; j--) // backwards due to memory packing TODO: Check order
+		{
+
+			char* p ;
+			p = (char*) &toLoad ;
+			byte = *(p+j) ;
+			// Output this part of the instruction
+			setAs(byte) ;
+			timerWait(SCUTimer, MEMLOAD_DATA_WAIT) ;
+			// Clock in the data
+			setBs(0x1) ; // Memory data clock pin
+			timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+			setBs(0x0) ; 
+			timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+			*/
+	//}
+
+			// Begin alternative implementation
+			//
+			aLoad[0] = (char) (i1 & 0x000000ff) ;
+			aLoad[1] = (char)((i1 & 0x0000ff00) >> 8) ;
+			aLoad[2] = (char)((i1 & 0x007f0000) >> 16) ;
+
+			aLoad[3] = (char) (i2 & 0x000000ff) ;
+			aLoad[4] = (char)((i2 & 0x0000ff00) >> 8) ;
+			aLoad[5] = (char)((i2 & 0x007f0000) >> 16) ;
+
+			aLoad[6] = (char)   address & 0x000000ff ;
+			aLoad[7] = (char) ((address & 0x00003f00) >> 8) ;
+
+
+			for (j = 7 ; j >= 0 ; j--)
+			{
+				setAs(aLoad[j]) ;
+				// Clock in the data
+				timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+				setBs(0x1) ; // Memory data clock pin
+				timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+				setBs(0x0) ;
+				timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+			}
+		// Loaded one instruction's data. Write to memory buffer
+		setBs(0x2) ; // Memory write pin
+		timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+		setBs(0x0) ;
+		timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+		readBs() ; // set them back to tri-state for safety
+		timerWait(SCUTimer, MEMLOAD_CLOCK_WAIT) ;
+
+	}
+
+	print("Memory loaded!\n") ;
+
+	return ;
+}
+
+#define SCAN_CLOCK_WAIT 0xffffff
+#define SCAN_CHAIN_LENGTH 412
+#define SCAN_CLOCK_SYNC_PULSES 0
+// CLK OUT REQUIRES 329 pulses to propagate from scan in to CLK OUT.
+//
+// INVERSION HAPPENS AT SCAN OUT. SCAN IN IS NON-INVERTED
+// TODO: Scan triggers on rising clock edge. How does David's circuit treat it. Scope: Looks like rising edge triggers it
+void readScanChain(XScuTimer* SCUTimer, char scanChain[430])
+{
+	/*
+	a7 is scan in
+	b5 is scan out
+	shift_enable is modesel0 := 1
+	scan_clock is clk_int
+	Chain has 430 bits
+	*/
+	int i ;
+	char bs ;
+
+	print("**Begin Scan**\n") ;
+
+	setAs(0x00) ; // a5 is PAT clock divider ; '1' := /2 ; '0' := /1 . This feature works. i.e. 0x20 is div2
+				  // Must be 0 for the scan to make sense
+	setBs(0x07) ; // b2 is PAT reset when in Debug mode.; b1 is patternbuffer high ; b0 patternbuffer low
+	setModes(MODE_RESET, F5V_INT, VREF_INT, CLK_EXT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+
+	// Ensure it's reset properly
+	for (i = 0 ; i < 50 ; i++)
+	{
+		manualClockPulse(SCUTimer) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+	}
+
+	setModes(MODE_MEMLOAD, F5V_INT, VREF_INT, CLK_EXT) ;
+	timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+
+	setAs(0x00) ; // scan in ones (0x80). This gets inverted, so zeroes come out.
+	timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+
+/*
+	for (i = 0 ; i < 500 ; i++)
+	{
+		manualClockPulse(SCUTimer) ;
+	}
+
+	while(1){ } ;
+	*/
+	for (i = 0 ; i < SCAN_CLOCK_SYNC_PULSES ; i++)
+	{
+		manualClockPulse(SCUTimer) ;
+	}
+
+/*
+	setModes(MODE_RUN, F5V_INT, VREF_INT, CLK_EXT) ;
+	timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+	manualClockPulse(SCUTimer) ; // one clock of the proc.
+	manualClockPulse(SCUTimer) ; // one clock of the proc.
+	manualClockPulse(SCUTimer) ; // one clock of the proc.
+	setModes(MODE_DEBUG, F5V_INT, VREF_INT, CLK_EXT) ;
+	timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+*/
+
+	for (i = SCAN_CHAIN_LENGTH - 1 ; i >= 0 ; i--)
+	{
+		manualClockPulse(SCUTimer) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+		bs = readBs() ;
+
+		// scan chain invertes each pad. We know that bit 329 is non-inverted from input, meaning that 412 is inverted
+		if (i % 2 == 1) {
+			scanChain[i] = ((bs >> 5)) & 0x01 ;
+			setAs(0x80) ;
+		}
+		else {
+			scanChain[i] = (~(bs >> 5)) & 0x01 ;
+			setAs(0x00) ;
+		}
+
+		printf("Aaddress %d, value %x\n", i+1, scanChain[i]) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+	}
+
+	for (i = SCAN_CHAIN_LENGTH - 1 ; i >= 0 ; i--)
+	{
+		manualClockPulse(SCUTimer) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+		bs = readBs() ;
+
+		// scan chain invertes each pad. We know that bit 329 is non-inverted from input, meaning that 412 is inverted
+		if (i % 2 == 1) scanChain[i] = ((bs >> 5)) & 0x01 ;
+		else scanChain[i] = (~(bs >> 5)) & 0x01 ;
+
+		printf("Read scanChain address %d value of %#x; storing %x\n", i+1, bs, scanChain[i]) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+	}
+
+/*
+	for (i = 0 ; i < 430 ; i++)
+	{
+		manualClockPulse(SCUTimer) ;
+		bs = readBs() ;
+		printf("Read scanChain address %d value of %#x; bit is %x\n", i+430, bs, ((bs >> 5)) & 0x01) ;
+		timerWait(SCUTimer, SCAN_CLOCK_WAIT) ;
+	}
+*/
+
+	print("\n**Scan complete**\n") ;
+
+	return ;
+
+
+}
+
+unsigned scanBitsToPacked(char scanChain[], unsigned offset, unsigned length)
+{
+	unsigned reg ;
+	int i ;
+	reg = 0 ;
+	for (i = 0 ; i < length ; i++)
+		{
+			reg = reg | (((scanChain[offset + i]) & 0x01) << i) ;
+		}
+	return reg ;
+}
+
+void displayScanChain(char scanChain[430])
+{
+	unsigned reg ;
+
+ // itoa (i,reg,2);
+//	  printf ("binary: %s\n",buffer);
+	reg = scanBitsToPacked(scanChain, 0, 23) ; // iBuffer_i_buffer_reg[0]
+	printf("iBuffer_i_buffer_reg[0] = %#x\n", reg) ;
+
+	reg = scanBitsToPacked(scanChain, 23, 23) ; // iBuffer_i_buffer_reg[1]
+	printf("iBuffer_i_buffer_reg[1] = %#x\n", reg) ;
+
+	reg = scanBitsToPacked(scanChain, 46, 20) ; // instruction_out
+	printf("iBuffer_i_buffer_reg[1] = %#x\n", reg) ;
+
+	reg = scanBitsToPacked(scanChain, 153, 9) ; // pc_reg
+	printf("pc_reg = %#x\n", reg) ;
+
+}
+
+
+
+

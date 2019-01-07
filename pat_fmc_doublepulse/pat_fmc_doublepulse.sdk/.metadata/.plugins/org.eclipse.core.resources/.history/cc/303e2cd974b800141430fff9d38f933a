@@ -1,0 +1,358 @@
+/*
+ * drive_test.c
+ *
+ *  Created on: 4 Feb 2015
+ *      Author: cssjh
+ *
+ *      Aim of this file: to run a test that
+ *      cycles through the n and the p drivers
+ *      turning each on in turn for a few us
+ */
+#include <stdio.h>
+
+#include "xparameters.h" // has the peripheral address definitions
+#include "xscutimer.h"
+#include "pat_tests.h"
+#include "drive_test.h"
+
+#define INPUTCLOCK 10 // ns per input clock
+
+int driveTest()
+{
+	/*
+	 * Configure processor and timer
+	 * Always need this section at start of main()
+	 */
+    unsigned *pwm_gpio_1 ;
+    unsigned *pwm_gpio_2 ;
+    unsigned pwm_low_waveform ;
+    unsigned pwm_high_waveform ;
+    unsigned clock_measurement ;
+    char n_strength ;
+    char p_strength ;
+    pattern testPattern ;
+    tweak testTweak ;
+
+    // Initialise the SCU Timer
+    XScuTimer_Config *SCUTimer_Config ;
+    XScuTimer SCUTimer ;
+
+	init_platform();
+
+    SCUTimer_Config = XScuTimer_LookupConfig(XPAR_XSCUTIMER_0_DEVICE_ID) ;
+
+    // Setup a timer
+    XScuTimer_CfgInitialize(&SCUTimer, SCUTimer_Config, SCUTimer_Config->BaseAddr) ;
+    XScuTimer_SelfTest(&SCUTimer) ;
+
+    /*
+     * End Configure processor and timer
+     * End compulsory copy-and-paste :)
+     */
+
+    print("Driver test program starting\n\r");
+
+
+
+
+    /* Set the mode to reset
+     *
+     */
+    print("Set chip to reset with internal circuits") ;
+    setModes(MODE_RESET, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+    /*
+     * End set mode
+     */
+
+
+
+    /*
+     * Set the VCO via the DAC
+     * DAC is 10 bits, so 1.8V = (2^10)-1 = 0x3ff
+     */
+    setDAC(&SCUTimer, 0x1ff ) ; // 0x1ff = 0.9V
+    /*
+     * End set VCO
+     */
+
+    /*
+     * Wait a suitable amount of time for the clock to settle
+     */
+    timerWait(&SCUTimer, 0xffffff) ; // This is the time to wait. 1/ (667MHz/Constant) seconds
+    /*
+     * end wait some time
+     */
+
+
+    /*
+     * Measure the clock from the chip.
+     */
+    print("Measuring clock\n\r") ;
+    clock_measurement = measureClkReturn(&SCUTimer) ;
+    printf("Clock measurement is %d\n\r", clock_measurement) ;
+    /*
+     * Clock measurement complete
+     */
+
+
+
+
+    /*
+     * Load in a pattern to the low-side buffer.
+     */
+    // first set mode to debug
+    print("Activating debug mode\n") ;
+    setModes(MODE_DEBUG, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to debug, internal f5v, internal vref, internal clock select
+    timerWait(&SCUTimer, 0xffffff) ; // Wait for mode switch to take effect
+    runTestDrive(&SCUTimer) ; // Run a test where we turn the p and n on and off alternatively at full strength
+    // Set up a full test pattern manually
+    // First, the drive strenghts we want
+    testPattern.n_drive = 0x01 ; // weakest n on
+    testPattern.p_drive = 0xff ; // all p off N.B. '0' turns ON p-types
+
+    // Now ensure the tweaks are all off
+    testTweak.delay = 0 ;
+    testTweak.duration = 0 ;
+    testTweak.enable = 0 ;
+    testTweak.sense = 0 ;
+    testPattern.n_tweak_0 = testTweak ;
+    testPattern.n_tweak_1 = testTweak ;
+    testPattern.n_tweak_2 = testTweak ;
+    testPattern.n_tweak_3 = testTweak ;
+    testPattern.n_tweak_4 = testTweak ;
+    testPattern.n_tweak_5 = testTweak ;
+    testPattern.p_tweak_0 = testTweak ;
+    testPattern.p_tweak_1 = testTweak ;
+    testPattern.p_tweak_2 = testTweak ;
+    testPattern.p_tweak_3 = testTweak ;
+    testPattern.p_tweak_4 = testTweak ;
+    testPattern.p_tweak_5 = testTweak ;
+
+    // finally, load the test pattern to the chip
+    // SJH: Check don't need to pass pattern by reference and update loadPattern definition with '->'s
+    print("Loading custom pattern\n") ;
+    loadPattern(testPattern, &SCUTimer, PWM_LOW, 0) ; // Load to low side, address 0
+
+    // Active this pattern as the output override
+    timerWait(&SCUTimer, 0xffffff) ;
+    setPatternOverride(PWM_LOW, 0) ; // we want to output low side, address 0
+    print("Chip should now be outputting the chosen pattern\n") ;
+
+    /*
+       * Start configuration of PWM
+       */
+      print("Begin setup of PWM.\n") ;
+      pwm_gpio_1 = XPAR_AXI_GPIO_PWM_BASEADDR ;
+      pwm_gpio_2 = XPAR_AXI_GPIO_PWM_BASEADDR + 0x08 ;
+
+
+      // Program a PWM waveform period, start and end for pwm low and high
+      // both high and low share the period (coded in pwm_low),
+      // The constant values is here: "calcPeriod(INPUTCLOCK, <REQUESTEDTIME>"). All times are in ns
+      pwm_low_waveform = (calcPeriod(INPUTCLOCK, 10000) << 20) | (calcPeriod(INPUTCLOCK, 6000) << 10) | calcPeriod(INPUTCLOCK, 0) ; //{cycle period, end, start}
+      pwm_high_waveform = (calcPeriod(INPUTCLOCK, 6000) << 10) | calcPeriod(INPUTCLOCK, 4000) ; // {end, start}
+
+      //pwm_low_waveform = (calcPeriod(INPUTCLOCK, 1000) << 20) | (calcPeriod(INPUTCLOCK, 600) << 10) | calcPeriod(INPUTCLOCK, 0) ; //{cycle period, end, start}
+           //pwm_high_waveform = (calcPeriod(INPUTCLOCK, 600) << 10) | calcPeriod(INPUTCLOCK, 400) ; // {end, start}
+
+      printf("Setting Low PWM register to: %#x\n\r", pwm_low_waveform) ;
+      printf("Setting High PWM register to: %#x\n\r", pwm_high_waveform) ;
+
+      *pwm_gpio_1 = pwm_low_waveform ;
+      *pwm_gpio_2 = pwm_high_waveform ;
+
+     print("PWM Low and High signals should now be active. Pausing for a few seconds...\n") ;
+      /*
+       * Completed PWM configuration
+       */
+
+     timerWait(&SCUTimer, 0xffffffff) ;
+
+     /*
+      * Re-program the drive strength. Turn off PWM first, then back on at end
+      */
+     print("\n**Changing drive strength**\n") ;
+     print("De-activate PWM...") ;
+     pwm_low_waveform = 0 ;
+     pwm_high_waveform = 0 ;
+     *pwm_gpio_1 = pwm_low_waveform ;
+     *pwm_gpio_2 = pwm_high_waveform ;
+     // wait to take effect
+     timerWait(&SCUTimer, 0xfffffff) ;
+     print("PWM Off\n") ;
+
+     // now update the waveform. This is a shortcut to program the main drive strengths only.
+     p_strength = 0xff ; // 0xff := off
+     n_strength = 0x03 ; // 0x03 := 2x strong driver
+     loadDrivesOnly(&SCUTimer, p_strength, n_strength, PWM_LOW, 0) ; // last argument is the pattern address
+
+     timerWait(&SCUTimer, 0xfffffff) ;
+
+     // Restart PWM
+     pwm_low_waveform = (calcPeriod(INPUTCLOCK, 1000) << 20) | (calcPeriod(INPUTCLOCK, 600) << 10) | calcPeriod(INPUTCLOCK, 0) ; //{cycle period, end, start}
+     pwm_high_waveform = (calcPeriod(INPUTCLOCK, 600) << 10) | calcPeriod(INPUTCLOCK, 400) ; // {end, start}
+
+     *pwm_gpio_1 = pwm_low_waveform ;
+     *pwm_gpio_2 = pwm_high_waveform ;
+
+     timerWait(&SCUTimer, 0xfffffff) ;
+
+    print("Re-programming complete\n") ;
+
+    /*
+     * End of update drive strength
+     */
+
+
+    return 0 ;
+}
+
+
+int main()
+{
+    // Initialise the SCU Timer
+    XScuTimer_Config *SCUTimer_Config ;
+    XScuTimer SCUTimer ;
+    instruction i1 ;
+    instruction i2 ;
+    instruction instrs[2] ;
+    int i ;
+    char scanChain[430] ;
+
+//    unsigned *mode_p ;
+//    unsigned *mode_p_tri ;
+
+	init_platform();
+
+    SCUTimer_Config = XScuTimer_LookupConfig(XPAR_XSCUTIMER_0_DEVICE_ID) ;
+
+    // Setup a timer
+    XScuTimer_CfgInitialize(&SCUTimer, SCUTimer_Config, SCUTimer_Config->BaseAddr) ;
+    XScuTimer_SelfTest(&SCUTimer) ;
+
+    /////////////////////////////////////////////////
+    /////// MY CODE
+    /////////////////////////////////
+
+
+  //  driveTest() ;
+
+	print("Reset\n") ;
+	setAs(0x20) ; // a5 is PAT clock divider ; '1' := /2 ; '0' := /1 . This feature works. i.e. 0x20 is div2
+	setModes(MODE_RESET, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+	setBs(0x07) ; // b2 is PAT reset when in Debug mode.; b1 is patternbuffer high ; b0 patternbuffer low
+	timerWait(&SCUTimer, 0x3fffffff) ;
+	print("Debug\n") ;
+
+
+	//while(1) {} ;
+
+
+
+	/*
+	print ("Debug\n") ;
+	setAs(0x00) ; // needed to prevent scan chain activation
+	setModes(MODE_DEBUG, F5V_INT, VREF_INT, CLK_EXT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+	while(1){} ;
+	//setBs(0x07) ; // PAT reset in debug mode
+	setBs(0x03) ; // PAT not reset in debug mode
+*/
+
+
+
+
+	print("Start running test program...\n") ;
+/*
+	//driveTest() ;
+	setModes(MODE_DEBUG, F5V_INT, VREF_INT, CLK_EXT) ;
+	setAs(0xff) ;
+	setBs(0xff) ;
+*/
+
+	// INSTR is   0x 0 10 08 2a
+	i1.cond = I_COND_AL ;
+	i1.dest = I_DEST_REG ;
+	i1.fieldp = 0 ;
+	i1.opcode = 0x8 ; // LDIR
+	i1.immediate = 0x2a ;
+	i1.rd = 1 ;
+
+	// will need a two cycle wait between these, since they're using same register
+	// just load them twice this time for a hack
+
+	// i2 is  0x  10 0 f b0
+	i2.cond = I_COND_AL ;
+	i2.dest = I_DEST_REG ;
+	i2.fieldp = 0 ;
+	i2.opcode = 0x4; // ADDI
+	i2.immediate = 0x01 ; //
+	i2.rd = 2 ;
+
+	instrs[0] = i1 ;
+	instrs[1] = i2 ;
+
+
+	loadMemory(&SCUTimer, 0, 2, instrs) ;
+
+
+	// INSTR is   0x 0 10 08 2a
+	i1.cond = I_COND_AL ;
+	i1.dest = I_DEST_REG ;
+	i1.fieldp = 0 ;
+	i1.opcode = 0x4; // ADDI
+	i1.immediate = 0x01 ; //
+	i1.rd = 2 ;
+
+	// will need a two cycle wait between these, since they're using same register
+	// just load them twice this time for a hack
+
+	// i2 is  0x  10 0 f b0
+	i2.cond = I_COND_AL ;
+	i2.dest = I_DEST_REG ;
+	i2.fieldp = 0 ;
+	i2.opcode = 0xf ; // i3 prefix
+	i2.immediate = 0xb0 ; // OUTR 0
+	i2.rd = 1 ;
+
+	instrs[0] = i1 ;
+	instrs[1] = i2 ;
+
+
+	loadMemory(&SCUTimer, 1, 2, instrs) ;
+
+
+
+	setModes(MODE_RESET, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+	timerWait(&SCUTimer, 0xfffff) ;
+
+
+	setModes(MODE_DEBUG, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+
+	readScanChain(&SCUTimer, scanChain) ;
+	displayScanChain(scanChain) ;
+
+	while(1) {} ;
+
+	setModes(MODE_RUN, F5V_INT, VREF_INT, CLK_INT) ; // Set mode to reset, internal f5v, internal vref, internal clock select
+
+//	mode_p = (unsigned*) XPAR_AXI_GPIO_MODES_BASEADDR ;
+//	*mode_p = 0x02 ;
+
+
+
+
+
+
+
+	print("Pins set. Running program\n") ;
+	for (i=0 ; i < 10 ; i++)
+	{
+		printf("Bpins: %#x\n", readBs()) ;
+//		manualClockPulse(&SCUTimer) ;
+//		timerWait(&SCUTimer, 0xfffff) ;
+		printf("Bpins: %#x\n", readBs()) ;
+	}
+	print("\nProgram complete. Bye!\n") ;
+
+	return 0 ;
+}
